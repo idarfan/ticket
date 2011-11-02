@@ -1,0 +1,30 @@
+<%= form_for(@cticket) do |f| %>
+  <% if @cticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cticket.errors.count, "error") %> prohibited this cticket from being saved:</h2>
+
+      <ul>
+      <% @cticket.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.select :year , ((Time.now.year - 10)..(Time.now.year)).to_a.reverse %>
+      </div>
+  <div class="field">
+    <%= f.label :month %><br />
+     <%= f.select :month , Bingo::MONTH %>
+  </div>
+  <div class="field">
+    <%= f.label :cticketnum %><br />
+    <%= f.text_field :cticketnum , :maxlength => 8  %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

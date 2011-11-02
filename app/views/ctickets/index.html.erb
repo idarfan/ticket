@@ -1,0 +1,31 @@
+<h1>Listing ctickets</h1>
+
+<table>
+  <tr>
+    <th>Year</th>
+    <th>Month</th>
+    <th>Cticketnum</th>
+    <th>Catbig</th>
+    <th>Catsmall</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ctickets.each do |cticket| %>
+  <tr>
+    <td><%= cticket.year %></td>
+    <td><%= Bingo::MONTH[cticket.month][0] %></td>
+    <td><%= cticket.cticketnum %></td>
+    <td><%= cticket.catbig %></td>
+    <td><%= cticket.catsmall %></td>
+    <td><%= link_to 'Show', cticket %></td>
+    <td><%= link_to 'Edit', edit_cticket_path(cticket) %></td>
+    <td><%= link_to 'Destroy', cticket, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cticket', new_cticket_path %>

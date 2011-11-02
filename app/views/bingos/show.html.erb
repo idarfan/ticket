@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Year:</b>
+  <%= @bingo.year %>
+</p>
+
+<p>
+  <b>Month:</b>
+  <%= @bingo.month %>
+</p>
+
+<p>
+  <b>Ticketnum:</b>
+  <%= @bingo.ticketnum %>
+</p>
+
+<p>
+  <b>Classlevel:</b>
+  <%= @bingo.classlevel %>
+</p>
+
+
+<%= link_to 'Edit', edit_bingo_path(@bingo) %> |
+<%= link_to 'Back', bingos_path %>

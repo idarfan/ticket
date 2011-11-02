@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  year: 1
+  month: 1
+  ticketnum: MyString
+  classlevel: 1
+
+two:
+  year: 1
+  month: 1
+  ticketnum: MyString
+  classlevel: 1

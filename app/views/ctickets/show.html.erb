@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Year:</b>
+  <%= @cticket.year %>
+</p>
+
+<p>
+  <b>Month:</b>
+  <%= @cticket.month %>
+</p>
+
+<p>
+  <b>Cticketnum:</b>
+  <%= @cticket.cticketnum %>
+</p>
+
+<p>
+  <b>Catbig:</b>
+  <%= @cticket.catbig %>
+</p>
+
+<p>
+  <b>Catsmall:</b>
+  <%= @cticket.catsmall %>
+</p>
+
+
+<%= link_to 'Edit', edit_cticket_path(@cticket) %> |
+<%= link_to 'Back', ctickets_path %>

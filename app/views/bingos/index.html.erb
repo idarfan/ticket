@@ -1,0 +1,29 @@
+<h1>Listing bingos</h1>
+
+<table>
+  <tr>
+    <th>Year</th>
+    <th>Month</th>
+    <th>Ticketnum</th>
+    <th>Classlevel</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bingos.each do |bingo| %>
+  <tr>
+    <td><%= bingo.year %></td>
+    <td><%= Bingo::MONTH[bingo.month][0] %></td>
+    <td><%= bingo.ticketnum %></td>
+    <td><%= bingo.classlevel && bingo.classlevel >= 0 && bingo.classlevel < Bingo::CLASSLEVEL.length ? Bingo::CLASSLEVEL[bingo.classlevel][0] : "error" %></td>
+    <td><%= link_to 'Show', bingo %></td>
+    <td><%= link_to 'Edit', edit_bingo_path(bingo) %></td>
+    <td><%= link_to 'Destroy', bingo, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bingo', new_bingo_path %>

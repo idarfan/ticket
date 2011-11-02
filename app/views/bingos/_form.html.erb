@@ -1,0 +1,33 @@
+<%= form_for(@bingo) do |f| %>
+  <% if @bingo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bingo.errors.count, "error") %> prohibited this bingo from being saved:</h2>
+
+      <ul>
+      <% @bingo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.select :year , ((Time.now.year - 10)..(Time.now.year)).to_a.reverse %>
+  </div>
+  <div class="field">
+    <%= f.label :month %><br />
+    <%= f.select :month , Bingo::MONTH %>
+  </div>
+  <div class="field">
+    <%= f.label :ticketnum %><br />
+    <%= f.text_field :ticketnum , :maxlength => 8 %>
+  </div>
+  <div class="field">
+    <%= f.label :classlevel %><br />
+    <%= f.select  :classlevel , Bingo::CLASSLEVEL %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
